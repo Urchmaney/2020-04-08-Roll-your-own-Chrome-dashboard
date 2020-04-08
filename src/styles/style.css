@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(https://images.unsplash.com/photo-1562803898-32f5369f3da7?crop=entropy&cs=t…rgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1600);
+}
+
+#container {
+    height: inherit;
+}
+
+#time{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+}
+
+#todo-container{
+    position: absolute;
+    right : 10px;
+    top: 100px;
+}
+
+#todo-container input{
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+
+.todo{
+    padding: 10px;
+    margin-left: 15px;
+    color: black;;
+    background-color: lightgray;
+    margin-bottom: 10px;
+}
