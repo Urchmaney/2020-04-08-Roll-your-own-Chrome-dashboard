@@ -62,6 +62,5 @@ const showPage = () => {
 }
 
 window.addEventListener('load', (e) => {
-    localStorage.clear();
     showPage();
 })
