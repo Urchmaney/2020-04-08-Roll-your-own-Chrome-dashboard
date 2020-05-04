@@ -1,19 +1,9 @@
-const getStorageTodo = () => {
-    return (localStorage.getItem('todo'));
-}
-
-const addStorageTodo = (todo) => {
-    let todos = localStorage.getItem('todo');
-    if(!todos) todos = '';
-    todos += todos.length > 0 ? `,${todo}` : todo;
-    localStorage.setItem('todo',todos);
-}
-
 const addTodos = () => {
     const container = document.getElementById('container');
     const formContainer = document.createElement('div');
     formContainer.id = 'todo-container';
     const addDisplayTodo = (todo) => {
+        if(todo.length < 1) return;
         const row = document.createElement('p');
         row.classList.add('todo');
         row.innerHTML = todo;
