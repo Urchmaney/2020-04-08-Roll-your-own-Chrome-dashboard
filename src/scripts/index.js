@@ -18,11 +18,20 @@ const displayTime = () => {
 const displayTodos = () => {
     const formContainer = document.createElement('div');
     formContainer.id = 'todo-container';
-    const addDisplayTodo = (todo) => {
+    const addDisplayTodo = (todo, index) => {
         if(todo.length > 0){
             const row = document.createElement('p');
+            const btn = document.createElement('button');
+            btn.classList.add('btn-close');
             row.classList.add('todo');
+            row.id = `${index}`;
             row.innerHTML = todo;
+            btn.innerHTML = 'X';
+            btn.addEventListener('click', (e) => {
+                deleteTodo(index);
+                showPage();                 
+            });
+            row.appendChild(btn);
             formContainer.appendChild(row);
         }        
     }
@@ -36,18 +45,23 @@ const displayTodos = () => {
         const inputVal = txtInput.value;
         txtInput.value = '';
         addTodo(inputVal);
-        addDisplayTodo(inputVal); 
+        showPage();
     })
     formContainer.appendChild(form);
-    console.log(getTodos());
-    getTodos().forEach(ele => {
-        addDisplayTodo(ele);
-    });        
+    const todos = getTodos();
+    for(let i = 0; i < todos.length; i++){
+        addDisplayTodo(todos[i], i);
+    }       
     container.appendChild(formContainer);
+}
+
+const showPage = () => {
+    container.innerHTML = '';
+    displayTime();
+    displayTodos();
 }
 
 window.addEventListener('load', (e) => {
     localStorage.clear();
-    displayTime();
-    displayTodos();
+    showPage();
 })

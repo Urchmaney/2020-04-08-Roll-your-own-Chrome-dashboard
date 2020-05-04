@@ -39,9 +39,18 @@ body{
 }
 
 .todo{
+    position: relative;
     padding: 10px;
     margin-left: 15px;
     color: black;;
     background-color: lightgray;
     margin-bottom: 10px;
+}
+
+.btn-close{
+    position: absolute;
+    color: red;
+    top : 2px;
+    right: 2px;
+    border: none;
 }
